@@ -4,12 +4,11 @@ import constants
 import matplotlib.pyplot as plt
 from scipy.integrate import cumulative_trapezoid
 
-# 1. Load your custom model
-# Ensure these column names match your CSV exactly
+# 1. Load model
 my_model = pd.read_csv('stellar_structure_5Msun.csv')
 
 # 2. Load MESA profile
-# We skip 5 rows so that Row 6 (the column labels) becomes the header
+# Skip the first 5 rows of header, and use whitespace as delimiter
 mesa_profile = pd.read_csv('profile.data', skiprows=5, sep=r'\s+')
 
 # 3. Define Constants (MESA usually uses these exact CGS values)
@@ -20,7 +19,6 @@ L_sun = 3.828e33
 M_star = constants.M_target
 
 # 4. Prepare MESA data
-# MESA profiles often go from Surface -> Center. We sort by mass for integration.
 mesa_profile = mesa_profile.sort_values('mass')
 
 m_mesa_g = mesa_profile['mass'] * M_sun
@@ -29,8 +27,9 @@ P_mesa = 10**mesa_profile['logP']
 rho_mesa = 10**mesa_profile['logRho']
 
 # 5. Calculate Luminosity Profile
-# Since 'luminosity' is missing, we integrate epsilon (pp + cno + tri_alpha)
+# Integrate epsilon over mass to get luminosity
 epsilon = mesa_profile['pp'] + mesa_profile['cno'] + mesa_profile['tri_alpha']
+
 # cumulative_trapezoid computes the integral of epsilon dm
 L_mesa_erg = cumulative_trapezoid(epsilon, m_mesa_g, initial=0)
 

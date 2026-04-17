@@ -36,7 +36,7 @@ y_start_surf = load2(M_target, L_star, R_star, kappa_avg)
 
 if sol.success:
     # 1. Re-run integrations with converged values to get the full profile
-    # Use dense_output=True so we can sample at specific mass points
+    # Use dense_output=True to sample at specific mass points
     sol_out = solve_ivp(derivs, [delta_m, M_mid], y_start_core, args=(X, Y, Z, filename), dense_output=True)
     sol_in = solve_ivp(derivs, [M_target, M_mid], y_start_surf, args=(X, Y, Z, filename), dense_output=True)
 
@@ -68,7 +68,7 @@ if sol.success:
     df = pd.DataFrame(data_rows, columns=cols)
 
     # 4. Format to 3 decimal points in scientific notation
-    # We apply the format to everything except the 'nature' column
+    # Apply the format to everything except the 'nature' column
     for col in cols[:-1]:
         df[col] = df[col].map(lambda x: f"{x:.3e}")
 

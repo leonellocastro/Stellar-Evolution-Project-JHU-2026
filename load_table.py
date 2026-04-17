@@ -43,7 +43,7 @@ def load_table(filename, target_id):
             row = []
             for val_str in parts[1:]:
                 v = float(val_str)
-                # Convert the 9.999 null sentinel to NaN
+                # Convert the 9.999 null to NaN
                 row.append(v if v != 9.999 else np.nan)
                 
             if len(row) == len(log_r):

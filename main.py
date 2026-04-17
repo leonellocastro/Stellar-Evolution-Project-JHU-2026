@@ -85,7 +85,7 @@ sol = root(shootf, initial_guesses, args=(M_target, delta_m, X, Y, Z, kappa_avg,
 
 """
 # Define bounds: (min_Pc, min_Tc, min_L, min_R), (max_Pc, max_Tc, max_L, max_R)
-# Adjust these based on your 1.5 Msun expectations
+# Adjust these based on 5 Msun expectations
 lower_bounds = [1e15, 1e6, 1e32, 5e10]
 upper_bounds = [1e18, 5e7, 1e36, 5e11]
 
@@ -97,7 +97,7 @@ if sol.success:
     final_Pc, final_Tc, final_L, final_R = sol.x
     print(f"Converged! L={final_L/LSUN:.2f} L_sun, R={final_R/RSUN:.2f} R_sun, Pc={final_Pc:.2e} dyn/cm^2, Tc={final_Tc:.2e} K")
 else:
-    print("Convergence failed. Check your initial guesses.")
+    print("Convergence failed. Check initial guesses.")
 
 if sol.success:
     save_data = {'sol': sol, 'kappa_avg': kappa_avg}

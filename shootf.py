@@ -75,11 +75,11 @@ def shootf(guesses, M_star, delta_m, X, Y, Z, kappa_avg, filename):
     Pc, Tc, L_star, R_star = guesses
     M_mid = M_star / 2.0
 
-    if shootf.iteration > 47:
+    if shootf.iteration > 40:
         print("\n!!! REACHED MAXIMUM ITERATIONS (40) !!!")
         print(f"Last Guesses: Pc={guesses[0]:.2e}, Tc={guesses[1]:.2e}, L={guesses[2]:.2e}, R={guesses[3]:.2e}")
         # Raising an error stops the solver and prevents further computation
-        raise StopIteration("Stopping solver: exceeded 47 iterations.")
+        raise StopIteration("Stopping solver: exceeded 40 iterations.")
     
     # 1. Outward Integration (Core to Midpoint)
     y_start_core = load1(delta_m, Pc, Tc)
@@ -92,7 +92,7 @@ def shootf(guesses, M_star, delta_m, X, Y, Z, kappa_avg, filename):
     y_mid_in = sol_in.y[:, -1] # Values at M_mid [l, p, r, t]
     
     # 3. Calculate the Residual (The "Miss")
-    # We want these four differences to eventually be zero
+    # Want these four differences to be close to zero
 
     # 4. Calculate Residuals
     diffs = y_mid_out - y_mid_in

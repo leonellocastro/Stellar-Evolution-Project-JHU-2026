@@ -11,7 +11,7 @@ def opacity_interpolator(log_rho, log_T, X, Y, Z, filename):
     except ValueError as e:
         return np.nan
 
-    # 2. Load the data using your existing load_table function
+    # 2. Load the data using existing load_table function
     lT_grid, lR_grid, kappa_mat, x_out, y_out, z_out = load_table(filename, table_id)
 
     # 3. Coordinate Conversion
