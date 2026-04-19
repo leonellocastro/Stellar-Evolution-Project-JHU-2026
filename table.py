@@ -74,3 +74,8 @@ if sol.success:
 
     df.to_csv("stellar_structure_5Msun.csv", index=False)
     print("\nMachine-readable table saved to stellar_structure_5Msun.csv")
+
+save_data = {'R_star': R_star, 'L_star': L_star}
+with open('star_properties.pkl', 'wb') as f:
+    pickle.dump(save_data, f)
+print("Star properties saved to star_properties.pkl")
