@@ -37,8 +37,7 @@ def load1(delta_m, Pc, Tc):
     l = eps_c * delta_m
     
     # 3. Pressure expansion (expressed in M_r)
-    # P = Pc - G * (pi/6)^(1/3) * rho^(4/3) * m^(2/3)
-    p = Pc - G * (np.pi/6.0)**(1/3.0) * (rho_c**(4/3.0)) * (delta_m**(2/3.0))
+    p = Pc - 3*G/(8*np.pi) *(((4*np.pi/3)*rho_c)**(4/3.0)) * (delta_m**(2/3.0))
     
     # 4. Temperature expansions (expressed in M_r)
     # Calculate central nabla_rad to check for convection
@@ -54,7 +53,6 @@ def load1(delta_m, Pc, Tc):
         # ln(T) = ln(Tc) - (pi/6)^(1/3) * (G * del_ad * rho^(4/3) / Pc) * m^(2/3)
         ln_t = np.log(Tc) - (np.pi/6.0)**(1/3.0) * (G * nabla_ad * (rho_c**(4/3.0)) / Pc) * (delta_m**(2/3.0))
         t = np.exp(ln_t)
-    
     return np.array([l, p, r, t])
 
 def load2(M_star, L_star, R_star, kappa_avg):
@@ -66,7 +64,6 @@ def load2(M_star, L_star, R_star, kappa_avg):
     
     # 3. Surface Pressure (Eddington Boundary)
     P_surf = (2.0 / 3.0) * (g_surf / kappa_avg)
-    
     return np.array([L_star, P_surf, R_star, T_eff])
 
 def shootf(guesses, M_star, delta_m, X, Y, Z, kappa_avg, filename):
@@ -106,5 +103,4 @@ def shootf(guesses, M_star, delta_m, X, Y, Z, kappa_avg, filename):
     print(f"  > Midpoint T-diff: {diffs[3]:.2e}")
 
     shootf.iteration += 1
-
     return diffs

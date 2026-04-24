@@ -61,10 +61,10 @@ if sol.success:
         nabla = min(nabla_rad, nabla_ad)
         nature = "Convective" if nabla_rad > constants.nabla_ad else "Radiative"
 
-        data_rows.append([m, r, rho, T, P, L, eps, kappa, constants.nabla_ad, nabla, nature])
+        data_rows.append([m, r, rho, T, P, L, eps, kappa, constants.nabla_ad, nabla_rad, nabla, nature])
 
     # 3. Save to CSV
-    cols = ['m', 'r', 'rho', 'T', 'P', 'L', 'epsilon', 'kappa', 'nabla_ad', 'nabla', 'nature']
+    cols = ['m', 'r', 'rho', 'T', 'P', 'L', 'epsilon', 'kappa', 'nabla_ad', 'nabla_rad', 'nabla', 'nature']
     df = pd.DataFrame(data_rows, columns=cols)
 
     # 4. Format to 3 decimal points in scientific notation

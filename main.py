@@ -2,7 +2,6 @@
 
 import numpy as np
 from scipy.optimize import root
-from scipy.optimize import least_squares
 import pickle
 import constants
 from load_table import load_table
