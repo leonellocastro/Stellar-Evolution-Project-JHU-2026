@@ -40,7 +40,7 @@ Ensure you have `numpy`, `matplotlib`, and `scipy` installed. Run the stellar mo
 python main.py
 ```
 
-Run the following code to generate a table called `stellar_structure_5Msun.csv` with all the relevant stellar quantities at each differential mass element:
+Run the following code to generate a table `stellar_structure_5Msun.csv` with the relevant stellar quantities at each differential mass element:
 ```bash
 python table.py
 ```
