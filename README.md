@@ -25,7 +25,7 @@ Our model aligns closely with the MESA benchmark for mechanical variables:
 
 We also see that there is a convective core and a radiative envelope, as expected for a high-mass star.
 
-![Model Energy Transport](energy_transport_comparison.png)
+![Model Energy Transport](energy_transport.png)
 
 ## Repository Structure
 - `main.py`: Main shooting-method code.
