@@ -31,7 +31,6 @@ def load_table(filename, target_id):
     log_T = []
     kappa_matrix = []
     
-    # The actual data starts 6 lines after the "TABLE # 1" marker
     for line in lines[data_block_start + 6:]:
         parts = line.split()
         if not parts: continue

@@ -1,6 +1,5 @@
 import numpy as np
 
-# Calculate percentage error between model and MESA profiles
 def percentage_error(model, mesa):
     """
     Calculate percentage error between model and MESA profiles.

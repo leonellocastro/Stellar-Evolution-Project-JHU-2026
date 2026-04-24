@@ -1,5 +1,5 @@
 import numpy as np
-import pandas as pd # Optional, but makes CSV saving easy
+import pandas as pd
 import pickle
 import constants
 from equation_of_state import equation_of_state
@@ -56,7 +56,7 @@ if sol.success:
         eps = get_epsilon(rho, T, X, Y, Z)
         kappa = opacity_interpolator(np.log10(rho), np.log10(T), X, Y, Z, filename)
         
-        # Calculate Nabla (same logic as in derivs)
+        # Calculate Nabla
         nabla_rad = (3.0 / (16.0 * np.pi * a_rad * c_light * G)) * (P * kappa * L) / (m * T**4)
         nabla = min(nabla_rad, nabla_ad)
         nature = "Convective" if nabla_rad > constants.nabla_ad else "Radiative"

@@ -169,7 +169,7 @@ line_ad = Line2D([0], [0], color='green', linestyle='--', label=r'$\nabla_{\text
 # Manually define the legend entries
 plt.legend(handles=[proxy_red, proxy_blue, line_ad], fontsize=14, loc='best')
 plt.grid(True, alpha=0.3)
-plt.savefig('energy_transport_comparison.png')
+plt.savefig('energy_transport.png')
 plt.show()
 
 # Find the cutoff mass where the model transitions from convective to radiative

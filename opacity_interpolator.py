@@ -15,7 +15,7 @@ def opacity_interpolator(log_rho, log_T, X, Y, Z, filename):
     lT_grid, lR_grid, kappa_mat, x_out, y_out, z_out = load_table(filename, table_id)
 
     # 3. Coordinate Conversion
-    # log10(R) = log10(rho) - 3*log10(T) + 18 (simplified version of the T6 version converting rho to R)
+    # log10(R) = log10(rho) - 3*log10(T) + 18
     log_R_target = log_rho - 3 * log_T + 18
 
     # 4. Set up the 2D Interpolator
