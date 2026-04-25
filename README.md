@@ -16,10 +16,10 @@ We made the following assumptions:
 
 ## Results
 Our model aligns closely with the MESA benchmark for mechanical variables:
-- **Radius Error:** < 5%
-- **T_eff Error:** < 8%
-- **g Error:** < 10%
-- **Luminosity Error:** ~21% (Attributed to CNO-cycle temperature sensitivity)
+- **Stellar Radius ($R_\ast$) Error:** < 5%
+- **Effective Temperature ($T_{eff}$) Error:** < 8%
+- **Surface Gravity ($g$) Error:** < 10%
+- **Stellar Luminosity ($L_\ast$) Error:** ~21% (Attributed to CNO-cycle temperature sensitivity)
 
 ![Model Profile](comparison_plot.png)
 
