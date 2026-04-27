@@ -50,4 +50,4 @@ Run the following code to compare the stellar variables between MESA and the mod
 python comparison.py
 ```
 
-To run the code with a different stellar mass and composition, simply edit the `constants.py` file by modifying `M_target`, `X`, `Y`, `Z` and rerun the above three files.
+To run the code with a different stellar mass and composition, simply edit the `constants.py` file by modifying `M_target`, `X`, `Y` and rerun the above three files.
