@@ -33,6 +33,7 @@ We also see that there is a convective core and a radiative envelope, as expecte
 - `comparison.py`: Generates the figures with the model and MESA data.
 - `profile.data`: Benchmark MESA data for comparison.
 - `opacity_table.txt`: Tables with different $\kappa$ values according to chemical composition.
+- `stellar_structure_report.pdf`: Full reort with analysis of results.
 
 ## Usage
 Ensure you have `numpy`, `matplotlib`, and `scipy` installed. Run the stellar model using:

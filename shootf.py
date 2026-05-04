@@ -1,4 +1,4 @@
-# shootf.py (load1 and load2 functions)
+# shootf.py (load1 and load2 functions included as well as the shootf function)
 
 import numpy as np
 from scipy.integrate import solve_ivp

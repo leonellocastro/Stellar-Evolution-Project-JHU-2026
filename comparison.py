@@ -96,9 +96,6 @@ for ax in axs.flat:
     ax.xaxis.get_offset_text().set_fontsize(20)
     ax.legend()
     ax.grid(True, alpha=0.3)
-    
-    # --- THIS IS THE KEY LINE FOR THE NUMBERS ---
-    # axis='both' handles X and Y, labelsize sets the number size
     ax.tick_params(axis='both', which='major', labelsize=20)
 
 plt.suptitle(r'5 $M_{\odot}$ ZAMS: Custom Model vs. MESA', fontsize=30)
