@@ -14,3 +14,11 @@ def total_energy_generation(epsilon_pp, epsilon_CNO):
     # Calculate the total energy generation rate
     epsilon_total = epsilon_pp + epsilon_CNO
     return epsilon_total
+
+def energy_generation_ratio(epsilon_pp, epsilon_CNO):
+    # Calculate the ratio of energy generation rates
+    if epsilon_CNO != 0:
+        ratio = epsilon_pp / epsilon_CNO
+    else:
+        ratio = np.inf  # Avoid division by zero
+    return ratio

@@ -8,6 +8,7 @@ from load_table import load_table
 from find_exact_table_id import find_exact_table_id
 from shootf import shootf, load1, load2
 from derivs import derivs
+from energy_generation import pp_chain, cno_cycle, total_energy_generation, energy_generation_ratio
 
 delta_m = constants.delta_m
 filename = constants.filename
@@ -93,3 +94,12 @@ if sol.success:
     with open('model_result.pkl', 'wb') as f:
         pickle.dump(save_data, f)
     print("Solution and kappa_avg saved to model_result.pkl")
+
+# Calculate energy generation ratio at all points in the star
+
+# Obtain epsilon_pp and epsilon_CNO from the final solution
+epsilon_pp = pp_chain(final_Pc, final_Tc, X, Y, Z)
+epsilon_CNO = cno_cycle(final_Pc, final_Tc, X, Y, Z)
+
+ratio = energy_generation_ratio(epsilon_pp, epsilon_CNO)
+print(f"Energy Generation Ratio (pp/CNO): {ratio:.2f}")
