@@ -30,7 +30,7 @@ We also see that there is a convective core and a radiative envelope, as expecte
 ## Repository Structure
 - `main.py`: Main shooting-method code.
 - `table.py`: Generates a table from the data from `main.py`.
-- `comparison.py`: Generates the figures with the model and MESA data.
+- `mesa_comparison.py`: Generates the figures with the model and MESA data.
 - `profile.data`: Benchmark MESA data for comparison.
 - `opacity_table.txt`: Tables with different $\kappa$ values according to chemical composition.
 - `stellar_structure_report.pdf`: Full reort with analysis of results.
@@ -48,7 +48,7 @@ python table.py
 
 Run the following code to compare the stellar variables between MESA and the model as well as the energy transport mechanism:
 ```bash
-python comparison.py
+python mesa_comparison.py
 ```
 
 To run the code with a different stellar mass and composition, simply edit the `constants.py` file by modifying `M_target`, `X`, `Y` and rerun the above three files.
