@@ -99,7 +99,7 @@ for ax in axs.flat:
     ax.tick_params(axis='both', which='major', labelsize=20)
 
 plt.suptitle(r'5 $M_{\odot}$ ZAMS: Custom Model vs. MESA', fontsize=30)
-plt.savefig('comparison_plot.png')
+plt.savefig('mesa_comparison_plot.png')
 plt.show()
 
 # Load the star radius and luminosity from the star properties
